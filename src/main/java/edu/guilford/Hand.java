@@ -1,37 +1,70 @@
 package edu.guilford;
 
+/**
+ * This class represents a hand of playing cards.
+ * @author Rob Whitnell
+ * @version 1.0
+ */
+
 import java.util.ArrayList;
 
 public class Hand {
     private ArrayList<Card> hand;
 
     
-
+    /**
+     * Constructor for objects of class Hand
+     * Creates a new hand
+     */
     public Hand() {
         hand = new ArrayList<Card>();
     }
 
+    /**
+     * Add a given card to the hand
+     * @param card
+     */
     public void addCard(Card card) {
         hand.add(card);
     }
 
+    /**
+     * Remove a given card from the hand
+     * @param card
+     */
     public void removeCard(Card card) {
         hand.remove(card);
     }
 
+    /**
+     * Remove all cards from the hand
+     */
     public void reset() {
         hand.clear();
     }
 
+    /**
+     * Get the size of the hand
+     * @return the number of cards in the hand
+     */
     public int size() {
         return hand.size();
     }
 
+    /**
+     * Get the card at a given index
+     * @param index
+     * @return the card at the given index
+     */
     public Card getCard(int index) {
         return hand.get(index);
     }
 
     // Calculate the value of the hand
+    /**
+     * Get the total value of the hand
+     * @return the sum of the values of the cards in the hand
+     */
     public int getTotalValue() {
         int value = 0;
         int aces = 0;
@@ -83,6 +116,11 @@ public class Hand {
     }
 
     // Override toString method
+    /**
+     * Get a string representation of the hand
+     * @return a string representation of the hand
+     */
+    @Override
     public String toString() {
         String handString = "";
         for (Card card : hand) {
@@ -91,6 +129,10 @@ public class Hand {
         return handString;
     }
 
+    /**
+     * Get the hand
+     * @return the hand
+     */
     public ArrayList<Card> getHand() {
         return hand;
     }

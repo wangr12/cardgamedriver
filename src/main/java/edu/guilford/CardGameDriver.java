@@ -1,5 +1,12 @@
 package edu.guilford;
 
+/**
+ * The driver runs NGAMES of Blackjack, outputting how many dealer wins, player wins, and pushes there are.
+ * Then, it runs a game of Lamarckian Poker, outputting the initial and final hands.
+ * @author Rob Whitnell
+ * @version 1.0
+ */
+
 public class CardGameDriver {
     public static void main(String[] args) {
         final int NGAMES = 10000;
@@ -28,8 +35,9 @@ public class CardGameDriver {
                     playerWins++;
                 }
             }
-            if (game.getDeck().size() < 10) {
-                game.reset(true);
+            if (game.getDeck().getDeck().size() < 10) {
+                // game.reset(true);
+                game = new Blackjack();
             }
 
             iGame++;
